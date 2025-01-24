@@ -1,0 +1,292 @@
+/* Importing Pixel Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Pixelify Sans', sans-serif;
+    background-color: #202D40;
+    color: #E6E8F1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Start Screen */
+#start-screen {
+    background-color: #02151C;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('images/startbg.jpg'); /* Add your city-building background */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#start-screen.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+#start-screen h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.5rem;
+    color: #713644;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px #3d1e2a;
+}
+
+#start-screen label {
+    font-size: 1.2rem;
+    color: #E6E8F1;
+    margin-right: 10px;
+}
+
+#start-screen select {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #DA6985;
+    border-radius: 5px;
+    background-color: #02151C;
+    color: #E6E8F1;
+    margin-bottom: 20px;
+}
+
+ 
+button{
+    padding: 10px 20px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    background-color: #994566;
+    color: white;
+    border: 3px solid #DA6985;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    margin-bottom: 10px;
+}
+button:hover {
+    background-color: #DA6985;
+    transform: scale(1.1);
+}
+.ground {
+    position: absolute;
+    bottom: 0;
+    width: 200%;
+    height: 100px;
+    background-color: #353535;
+    animation: groundMove 3s linear infinite;
+}
+/* Game Container */
+.game-container {
+    background-color: #202D40;
+    background-image: url('images/gamebg.webp'); /* Add your city-building background */
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Road (Ground) */
+.road {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #02151C;
+    border-top: 5px solid #DA6985;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    animation: roadMove 2s linear infinite;
+}
+
+@keyframes roadMove {
+    from {
+        background-position-x: 0;
+    }
+    to {
+        background-position-x: -100%;
+    }
+}
+
+/* Dashed road lines */
+.road::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-image: repeating-linear-gradient(
+        90deg,
+        #994566 0%,
+        #994566 20%,
+        transparent 20%,
+        transparent 40%
+    );
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Dino Character */
+.dino {
+    position: absolute;
+    bottom: 96px;
+    left: 50px;
+    width: 60px;
+    height: 60px;
+    background-image: url('images/dino.webp');
+    background-size: cover;
+    border: 3px solid #994566;
+    border-radius: 5px;
+    animation: idle 0.5s infinite alternate;
+}
+
+@keyframes idle {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-5px);
+    }
+}
+
+.dino.jump {
+    animation: jump 1s ease-out;
+}
+
+@keyframes jump {
+    0% {
+        bottom: 90px;
+    }
+    50% {
+        bottom: 200px;
+    }
+    100% {
+        bottom: 90px;
+    }
+}
+
+/* Obstacle */
+.obstacle {
+    position: absolute;
+    bottom: 90px;
+    right: -50px;
+    width: 40px;
+    height: 60px;
+    background-color: #994566;
+    border: 3px solid #DA6985;
+    animation: moveObstacle 2s linear infinite;
+}
+
+@keyframes moveObstacle {
+    from {
+        right: -50px;
+    }
+    to {
+        right: 110vw;
+    }
+}
+
+/* Question Section */
+#question-container {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 800px;
+    padding: 15px;
+    background-color: rgba(32, 45, 64, 0.9);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: #E6E8F1;
+    z-index: 10;
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+#answers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+#answers button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.9rem;
+    padding: 10px 15px;
+    background-color: #DA6985;
+    color: #E6E8F1;
+    border: 2px solid #994566;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+#answers button:hover {
+    background-color: #994566;
+    transform: scale(1.1);
+}
+
+/* Game Over Screen */
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    display: none;
+}
+
+.game-over h1 {
+    font-size: 3rem;
+    color: #DA6985;
+    text-shadow: 3px 3px #994566;
+}
+
+.restart-button {
+    margin-top: 20px;
+    font-size: 1rem;
+    padding: 10px 20px;
+    background-color: #994566;
+    color: white;
+    border: 3px solid #DA6985;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.restart-button:hover {
+    background-color: #DA6985;
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #question-container {
+        font-size: 0.9rem;
+    }
+
+    #answers button {
+        font-size: 0.8rem;
+        padding: 8px 10px;
+    }
+}
