@@ -29,7 +29,7 @@ body {
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background-image: url('images/startbg.jpg'); /* Add your city-building background */
+    background-image: url('images/startbg.jpg'); 
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -93,7 +93,7 @@ button:hover {
 /* Game Container */
 .game-container {
     background-color: #202D40;
-    background-image: url('images/gamebg.webp'); /* Add your city-building background */
+    background-image: url('images/gamebg.webp'); 
     width: 100vw;
     height: 100vh;
     background-size: cover;
@@ -243,7 +243,6 @@ button:hover {
     transform: scale(1.1);
 }
 
-/* Game Over Screen */
 .game-over {
     position: absolute;
     top: 50%;
@@ -277,7 +276,6 @@ button:hover {
     transform: scale(1.1);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     #question-container {
         font-size: 0.9rem;
