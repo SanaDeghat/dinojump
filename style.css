@@ -88,7 +88,7 @@ button:hover {
     width: 200%;
     height: 100px;
     background-color: #353535;
-    animation: groundMove 3s linear infinite;
+    animation: groundMove 5s linear infinite;
 }
 /* Game Container */
 .game-container {
