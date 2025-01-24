@@ -103,7 +103,7 @@ function endGame() {
 
 // Obstacle Animation
 function startObstacleAnimation() {
-  obstacle.style.animation = "moveObstacle 4s linear infinite"; 
+  obstacle.style.animation = "moveObstacle 6s linear infinite"; 
 }
 
 // Collision Detection
