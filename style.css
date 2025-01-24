@@ -151,8 +151,6 @@ button:hover {
     height: 60px;
     background-image: url('images/dino.webp');
     background-size: cover;
-    border: 3px solid #994566;
-    border-radius: 5px;
     animation: idle 0.5s infinite alternate;
 }
 
