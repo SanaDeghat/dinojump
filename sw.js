@@ -6,13 +6,13 @@ const CACHE_NAME = 'my-app-cache-v1';
 const DYNAMIC_CACHE_NAME = 'my-app-dynamic-cache-v1';
 
 // Files to cache during install
-const STATIC_ASSETS = ['/',
-        'Index.html',
-        'style.css',
-        'js2.js',
-        'images/dino.webp',
-        'images/gamebg.webp',
-        'images/startbg.jpg'
+const STATIC_ASSETS = ['/dinojump/',
+        '/dinojump/index.html',
+        '/dinojump/style.css',
+        '/dinojump/js2.js',
+        '/dinojump/images/dino.webp',
+        '/dinojump/images/gamebg.webp',
+        '/dinojump/images/startbg.jpg'
 ];
 
 // Install event: Cache static assets
